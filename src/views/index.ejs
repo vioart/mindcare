@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/umd/heroicons.min.js"></script>
+  <title>Mind Care</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .mindcare-font {
+      font-family: "Lobster", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+  <!-- Halaman Utama -->
+  <div class="flex flex-col min-h-screen">
+    <!-- Bagian Animasi -->
+    <div class="relative w-full z-0">
+      <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 590" xmlns="http://www.w3.org/2000/svg"
+        class="transition duration-300 ease-in-out delay-150">
+        <style>
+          .path-0 {
+            animation: pathAnim-0 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+          }
+
+          @keyframes pathAnim-0 {
+            0% {
+              d: path("M 0,600 L 0,225 C 134.78571428571428,240.10714285714286 269.57142857142856,255.21428571428572 389,265 C 508.42857142857144,274.7857142857143 612.4999999999999,279.25 738,256 C 863.5000000000001,232.75 1010.4285714285716,181.78571428571428 1131,172 C 1251.5714285714284,162.21428571428572 1345.7857142857142,193.60714285714286 1440,225 L 1440,600 L 0,600 Z");
+            }
+
+            25% {
+              d: path("M 0,600 L 0,225 C 127.46428571428572,244.39285714285714 254.92857142857144,263.7857142857143 368,243 C 481.07142857142856,222.21428571428572 579.7500000000001,161.25 701,139 C 822.2499999999999,116.74999999999999 966.0714285714287,133.2142857142857 1093,154 C 1219.9285714285713,174.7857142857143 1329.9642857142858,199.89285714285717 1440,225 L 1440,600 L 0,600 Z");
+            }
+
+            50% {
+              d: path("M 0,600 L 0,225 C 113.60714285714286,195.07142857142856 227.21428571428572,165.14285714285714 334,152 C 440.7857142857143,138.85714285714286 540.75,142.5 676,147 C 811.25,151.5 981.7857142857142,156.8571428571429 1115,170 C 1248.2142857142858,183.1428571428571 1344.107142857143,204.07142857142856 1440,225 L 1440,600 L 0,600 Z");
+            }
+
+            75% {
+              d: path("M 0,600 L 0,225 C 102.5,273.7857142857143 205,322.57142857142856 342,320 C 479,317.42857142857144 650.5000000000001,263.5 773,225 C 895.4999999999999,186.5 969,163.42857142857142 1072,166 C 1175,168.57142857142858 1307.5,196.78571428571428 1440,225 L 1440,600 L 0,600 Z");
+            }
+
+            100% {
+              d: path("M 0,600 L 0,225 C 134.78571428571428,240.10714285714286 269.57142857142856,255.21428571428572 389,265 C 508.42857142857144,274.7857142857143 612.4999999999999,279.25 738,256 C 863.5000000000001,232.75 1010.4285714285716,181.78571428571428 1131,172 C 1251.5714285714284,162.21428571428572 1345.7857142857142,193.60714285714286 1440,225 L 1440,600 L 0,600 Z");
+            }
+          }
+        </style>
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="5%" stop-color="#005d69"></stop>
+            <stop offset="95%" stop-color="#182233"></stop>
+          </linearGradient>
+        </defs>
+        <path
+          d="M 0,600 L 0,225 C 134.78571428571428,240.10714285714286 269.57142857142856,255.21428571428572 389,265 C 508.42857142857144,274.7857142857143 612.4999999999999,279.25 738,256 C 863.5000000000001,232.75 1010.4285714285716,181.78571428571428 1131,172 C 1251.5714285714284,162.21428571428572 1345.7857142857142,193.60714285714286 1440,225 L 1440,600 L 0,600 Z"
+          stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1"
+          class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 300)"></path>
+      </svg>
+    </div>
+
+    <!-- Bagian Menu Elemen -->
+    <div class="absolute top-28 md:top-16 w-full flex flex-col items-center space-y-5 py-5 pb-36 px-5 z-10">
+      <img src="img/logo.png" alt="Logo Mind Care" class="w-24 h-24 rounded-full">
+      <h1 class="text-3xl font-semibold text-[#005D69] sm:text-white mb-10 mindcare-font">Mind Care</h1>
+
+      <a href="/kuesioner"
+        class="w-full max-w-md h-28 bg-gradient-to-r from-[#182233] to-[#005D69] text-white flex items-center justify-start rounded-3xl shadow-2xl px-5 md:px-9 cursor-pointer">
+        <div class="flex items-center space-x-4">
+          <img src="img/icon.png" alt="Icon Kuesioner" class="w-22 h-22">
+          <span class="text-md md:text-lg font-semibold">Cek Tingkat Stres Kamu Sekarang</span>
+        </div>
+      </a>
+      <a href="/materi"
+        class="w-full max-w-md h-28 bg-gradient-to-r from-[#182233] to-[#005D69] text-white flex items-center justify-start rounded-3xl shadow-2xl px-5 md:px-9 cursor-pointer">
+        <div class="flex items-center space-x-4">
+          <img src="img/icon3.png" alt="Icon Kuesioner" class="w-22 h-22">
+          <span class="text-md md:text-lg font-semibold">Kenali Macam-Macam Gangguan Kesehatan Mental</span>
+        </div>
+      </a>
+      <a href="/tips"
+        class="w-full max-w-md h-28 bg-gradient-to-r from-[#182233] to-[#005D69] text-white flex items-center justify-start rounded-3xl shadow-2xl px-5 md:px-9 cursor-pointer">
+        <div class="flex items-center space-x-4">
+          <img src="img/icon2.png" alt="Icon Kuesioner" class="w-22 h-22">
+          <span class="text-md md:text-lg font-semibold">Tips untuk menjaga kesehatan mental</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bg-white p-4 shadow-lg mt-auto fixed bottom-0 w-full z-10">
+      <div class="flex justify-around">
+        <a href="/" class="text-gray-700 flex flex-col items-center focus:outline-none hover:text-[#005D69]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+          </svg>
+          <span class="text-sm">Home</span>
+        </a>
+        <a href="/kontak" class="text-gray-700 flex flex-col items-center focus:outline-none hover:text-[#005D69]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+          </svg>
+          <span class="text-sm">Contact</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

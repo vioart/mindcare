@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/umd/heroicons.min.js"></script>
+  <title>Mind Care</title>
+  <style>
+    /* Menambahkan font Poppins ke seluruh halaman */
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Halaman Kuesioner -->
+  <div class="flex flex-col min-h-screen max-w-4xl mx-auto px-5 mb-20">
+
+    <div class="w-full max-w-4xl py-6 px-4">
+      <a href="/" class="absolute top-4 left-4 p-2 bg-white rounded-full shadow-lg hover:bg-gray-200 z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6 text-gray-700">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="text-center my-10">
+      <span class="bg-green-500 text-white py-4 px-5 rounded-full inline-flex items-center justify-center">
+        <!-- Ikon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6 mr-2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+        </svg>
+        Kuesioner Kesehatan Mental
+      </span>
+    </div>
+
+    <!-- Form Kuesioner -->
+    <form action="/hasil" method="POST" id="kuesionerForm">
+      <!-- Nama dan Umur -->
+      <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- Nama -->
+          <div>
+            <label for="nama" class="block text-xs sm:text-sm font-medium text-gray-700">Nama</label>
+            <input type="text" id="nama" name="nama"
+              class="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm bg-gray-100" required>
+          </div>
+          <!-- Umur -->
+          <div>
+            <label for="umur" class="block text-xs sm:text-sm font-medium text-gray-700">Umur</label>
+            <input type="number" id="umur" name="umur"
+              class="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm bg-gray-100" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Penilaian -->
+      <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Penilaian</h2>
+        <ul class="list-disc pl-6 text-gray-700">
+          <li><strong>1 :</strong> Sangat Tidak Setuju</li>
+          <li><strong>2 :</strong> Tidak Setuju</li>
+          <li><strong>3 :</strong> Netral</li>
+          <li><strong>4 :</strong> Setuju</li>
+          <li><strong>5 :</strong> Sangat Setuju</li>
+        </ul>
+      </div>
+
+      <!-- Pertanyaan Kuesioner -->
+      <div class="space-y-6">
+        <% questions.forEach((question, index)=> { %>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <label class="block text-sm sm:text-lg font-semibold text-gray-800 mb-4">
+              <%= index + 1 %>. <%= question.question %>
+            </label>
+            <div class="flex space-x-4">
+              <!-- Opsi Jawaban 1 hingga 5 -->
+              <label class="inline-flex items-center cursor-pointer text-sm">
+                <input type="radio" name="<%= question.id %>" value="1"
+                  class="form-radio text-green-500 focus:ring-2 focus:ring-green-500" required>
+                <span class="ml-2">1</span>
+              </label>
+              <label class="inline-flex items-center cursor-pointer text-sm">
+                <input type="radio" name="<%= question.id %>" value="2"
+                  class="form-radio text-green-500 focus:ring-2 focus:ring-green-500" required>
+                <span class="ml-2">2</span>
+              </label>
+              <label class="inline-flex items-center cursor-pointer text-sm">
+                <input type="radio" name="<%= question.id %>" value="3"
+                  class="form-radio text-green-500 focus:ring-2 focus:ring-green-500" required>
+                <span class="ml-2">3</span>
+              </label>
+              <label class="inline-flex items-center cursor-pointer text-sm">
+                <input type="radio" name="<%= question.id %>" value="4"
+                  class="form-radio text-green-500 focus:ring-2 focus:ring-green-500" required>
+                <span class="ml-2">4</span>
+              </label>
+              <label class="inline-flex items-center cursor-pointer text-sm">
+                <input type="radio" name="<%= question.id %>" value="5"
+                  class="form-radio text-green-500 focus:ring-2 focus:ring-green-500" required>
+                <span class="ml-2">5</span>
+              </label>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="mt-6 flex justify-center">
+        <button type="submit"
+          class="bg-[#005D69] text-white px-8 py-2 rounded-lg shadow-md hover:bg-[#182233] focus:outline-none">
+          Kirim
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("kuesionerForm");
+
+    form.addEventListener("submit", (e) => {
+      let allAnswered = true;
+
+      const radios = form.querySelectorAll("input[type='radio']");
+      radios.forEach((radio) => {
+        const questionName = radio.name;
+        const questionAnswered = form.querySelector(`input[name="${questionName}"]:checked`);
+        if (!questionAnswered) {
+          allAnswered = false;
+        }
+      });
+
+      if (!allAnswered) {
+        e.preventDefault();
+        alert("Harap jawab semua pertanyaan.");
+      }
+    });
+  </script>
+
+</body>
+
+</html>
